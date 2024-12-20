@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy IP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click the Button to Copy the Server IP</h1>
+    <button onclick="copyIP()">Copy IP Address</button>
+
+    <script>
+        function copyIP() {
+            const ip = "103.139.234.60:10308";
+            navigator.clipboard.writeText(ip).then(() => {
+                alert("Server IP copied to clipboard: " + ip);
+            }).catch(err => {
+                alert("Failed to copy IP: " + err);
+            });
+        }
+    </script>
+</body>
+</html>
